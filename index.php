@@ -55,21 +55,21 @@
     <section id="search-section">
         <div class="container">
             <h2 class="main-text">Find Apartments</h2>
-            <form action="" method="post">
+            <form action="search_apartments.php" method="post">
                 <label for="search-apartment-select">Choose Your Apartment</label>
                 <select id="search-apartments-select" name="search-apartments-select">
-                    <option value="all-apartments">All Apartments</option>
-                    <option value="ambrose">Ambrose</option>
-                    <option value="berkeley-court">Berkeley Court</option>
-                    <option value="camino-del-sol">Camino del Sol</option>
-                    <option value="columbia-court">Columbia Court</option>
-                    <option value="cornell-court">Cornell Court</option>
-                    <option value="dartmouth-court">Dartmouth Court</option>
-                    <option value="dartmouth-court">Harvard Court</option>
-                    <option value="puerta-del-sol">Puerta del Sol</option>
-                    <option value="stanford-court">Stanford Court</option>
-                    <option value="vista-del-campo">Vista del Campo</option>
-                    <option value="vista-del-campo-norte">Vista del Campo Norte</option>
+                    <option value="All Apartments">All Apartments</option>
+                    <option value="Ambrose">Ambrose</option>
+                    <option value="Berkeley Court">Berkeley Court</option>
+                    <option value="Camino del Sol">Camino del Sol</option>
+                    <option value="Columbia Court">Columbia Court</option>
+                    <option value="Cornell Court">Cornell Court</option>
+                    <option value="Dartmouth Court">Dartmouth Court</option>
+                    <option value="Harvard Court">Harvard Court</option>
+                    <option value="Puerta del Sol">Puerta del Sol</option>
+                    <option value="Stanford Court">Stanford Court</option>
+                    <option value="Vista del Campo">Vista del Campo</option>
+                    <option value="Vista del Campo Norte">Vista del Campo Norte</option>
                 </select>   
                 <input type="submit" name="search-apartments" value="Search" class="btn btn-primary search-btn">
             </form>              
@@ -86,15 +86,15 @@
                         <select id="add-apartments-select" name="add-apartments-select">
                             <option value="Ambrose">Ambrose</option>
                             <option value="Berkeley Court">Berkeley Court</option>
-                            <option value="Camino Del Sol">Camino del Sol</option>
+                            <option value="Camino del Sol">Camino del Sol</option>
                             <option value="Columbia Court">Columbia Court</option>
                             <option value="Cornell Court">Cornell Court</option>
                             <option value="Dartmouth Court">Dartmouth Court</option>
                             <option value="Harvard Court">Harvard Court</option>
-                            <option value="Puerta Del Sol">Puerta del Sol</option>
+                            <option value="Puerta del Sol">Puerta del Sol</option>
                             <option value="Stanford Court">Stanford Court</option>
-                            <option value="Vista Del Campo">Vista del Campo</option>
-                            <option value="Vista Del Campo Norte">Vista del Campo Norte</option>
+                            <option value="Vista del Campo">Vista del Campo</option>
+                            <option value="Vista del Campo Norte">Vista del Campo Norte</option>
                         </select>      
                         <label for="price">Price</label>
                         <input type="text" id="price" name="price" placeholder="E.g. 485, 600, 790" required>

@@ -38,4 +38,46 @@ function addListing() {
     }
 }
 
+function showApartments() {
+    global $connection;
+    
+    // Gathering form value
+    $apartment =  $_POST['search-apartments-select'];
+
+    // Validating if user wants to view all apartments
+    if ($apartment == "All Apartments") {
+        // Creating the query and submitting it
+        $query = "SELECT * FROM listings";
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die();
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                <td>".$row['apartment']."</td>
+                <td>".$row['price']."</td>
+                <td>".$row['arrangement']."</td>
+                <td>".$row['contact']."</td>
+                </tr>";
+            }
+        }
+    } else {
+        // Creating query and submitting it
+        $query = "SELECT * FROM listings WHERE apartment = '$apartment'";
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die();
+        } else {
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo "<tr>
+                <td>".$row['apartment']."</td>
+                <td>".$row['price']."</td>
+                <td>".$row['arrangement']."</td>
+                <td>".$row['contact']."</td>
+                </tr>";
+            }                    
+        }
+    }    
+}
+
 ?>

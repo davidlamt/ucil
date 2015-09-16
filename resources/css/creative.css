@@ -93,6 +93,10 @@ input[type="email"] {
     background-color: #e67e22;
 }
 
+/* ------------------------------------------------------------ */
+/* INDEX PAGE */
+/* ------------------------------------------------------------ */
+
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
@@ -208,4 +212,51 @@ footer a:hover,
 a:active {
     text-decoration: underline;
     color: #cf6d17;
+}
+
+/* ------------------------------------------------------------ */
+/* SEARCH PAGE */
+/* ------------------------------------------------------------ */
+
+#search-page-section h1 {
+    font-weight: 300;
+    font-size: 300%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#search-page-section h1:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 40px auto 0 auto;     
+}
+
+#apartment-table tr:nth-child(even){
+    background-color: #e67e22;
+    color: #ffffff;
+}
+
+#apartment-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#apartment-table th {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#apartment-table, 
+#apartment-table th, 
+#apartment-table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#apartment-table th, 
+#apartment-table td {
+    padding: 5px;
+    text-align: left;
 }
