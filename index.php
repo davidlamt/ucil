@@ -97,7 +97,7 @@
                             <option value="Vista Del Campo Norte">Vista del Campo Norte</option>
                         </select>      
                         <label for="price">Price</label>
-                        <input type="text" id="price" name="price" placeholder="E.g. 485, 600, 790">
+                        <input type="text" id="price" name="price" placeholder="E.g. 485, 600, 790" required>
                         <label for="arrangement">Living Arrangement</label>
                         <select id="arrangement-select" name="arrangement-select">
                             <option value="Single">Single</option>
@@ -110,9 +110,9 @@
                     </div>
                     <div class="col span-6-of-12">
                         <label for="contact">Contact</label>
-                        <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890">                                                       <label for="email-add">Email</label>
+                        <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890" required>                                                       <label for="email-add">Email</label>
                         <p>For modification and deletion of listings</p>
-                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com">                      
+                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com" required>                      
                     </div>
                 </div>
                 <input type="submit" id="add-listing" name="add-listing" class="btn btn-primary add-btn" value="Add">
@@ -125,7 +125,7 @@
             <h2 class="main-text">Modify Listing</h2>
             <form action="" method="post">
                 <label for="email-find">Please enter the email you used to post the listing</label>
-                <input type="email" id="email-find" name="email-find" placeholder="E.g. apartment@find.com">
+                <input type="email" id="email-find" name="email-find" placeholder="E.g. apartment@find.com" required>
                 <input type="submit" id="modify-listing" name="modify-listing" class="btn btn-primary modify-btn" value="Modify">
             </form>
         </div>
