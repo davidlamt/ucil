@@ -8,6 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="vendors/css/grid.css">
     <link rel="stylesheet" type="text/css" href="vendors/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/queries.css">
     <link rel="stylesheet" type="text/css" href="resources/css/creative.css">
     
     <!-- Linking JS dependencies -->
@@ -21,7 +22,7 @@
             <h2>Helping UCI Students Find Housing</h2> 
             <div class="section row">
                 <div class="col span-4-of-12">
-                    <i class="fa fa-home fa-2x"></i>
+                    <i class="fa fa-home fa-2x first"></i>
                     <h2>Find Apartments</h2>
                     <a href="#search-section" class="btn btn-primary">Search</a>
                 </div>

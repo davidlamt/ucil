@@ -1,0 +1,31 @@
+/* For devices less than 992 pixels */
+@media (max-width: 991px) {
+    header i {
+        margin-top: 20px !important;
+    }
+    
+    header i.first {
+        margin-top: -15px !important;
+    }
+}
+
+/* For devices less than 487 pixels */
+@media (max-width: 486px) {
+    header h2 {
+        font-size: 120% !important;
+    }
+}
+
+/* For devices less than 420 pixels */
+@media (max-width: 419px) {
+    header h2 {
+        font-size: 110% !important;
+    }    
+}
+
+/* For devices less than 385 pixels */
+@media (max-width: 385px) {
+    header h2 {
+        font-size: 100% !important;
+    }
+}
