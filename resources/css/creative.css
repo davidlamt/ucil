@@ -22,6 +22,14 @@ body {
 /* REUSABLE COMPONENTS */
 /* ---------------------------------------- */
 
+section {
+    padding: 40px 0;
+}
+
+label {
+    display: block;
+}
+
 .container {
     width: 90%;
     max-width: 1140px;
@@ -37,7 +45,9 @@ body {
     cursor: pointer;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited {
     background-color: #e67e22;
     color: #ffffff;
     -webkit-transition: background-color 0.2s;
@@ -47,20 +57,35 @@ body {
 .btn-primary:hover,
 .btn-primary:active {
     background-color: #cf6d17;
+    text-decoration: none;
 }
 
-/* ---------------------------------------- */
-/* HOME PAGE */
-/* ---------------------------------------- */
+.main-text {
+    text-align: center;
+    font-weight: 300;
+    font-size: 150%;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
 
-#home-page {
-    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/background-img.jpe);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/background-img.jpe);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 100vh;
-    color: #ffffff;
+.main-text:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 30px auto 0 auto;      
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 40%;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    font-family: inherit;
+    font-weight: 400;
+    margin: 10px 0;
 }
 
 /* ---------------------------------------- */
@@ -68,6 +93,13 @@ body {
 /* ---------------------------------------- */
 
 header {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/background-img.jpe);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/background-img.jpe);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    color: #ffffff;    
     text-align: center;
 }
 
@@ -93,31 +125,60 @@ header h2 {
     margin-bottom: 20px;
 }
 
-/* ---------------------------------------- */
-/* MAIN SECTION */
-/* ---------------------------------------- */
-
-#main-section h2 {
-    text-align: center;
-    font-weight: 300;
-    font-size: 140%;
-}
-
-#main-section i {
+header i {
+    display: block;
+    margin: 0 auto;
     color: #e67e22;
-    width: 100%;
+    margin: 20px 0 10px 0;
+}
+
+/* ---------------------------------------- */
+/* SEARCH SECTION */
+/* ---------------------------------------- */
+
+#search-section form {
     text-align: center;
 }
 
-#main-section .select-box {
+#search-section .search-btn {
     display: block;
-    text-align: center;
-    margin-top: 10px;
+    margin: 20px auto 0 auto;
 }
 
-#main-section .search-apartments {
+/* ---------------------------------------- */
+/* ADD SECTION */
+/* ---------------------------------------- */
+
+#add-section {
+    background-color: #F4F4F4;
+    text-align: center;
+}
+
+#add-section label {
     display: block;
-    margin: 20px auto;
+    margin: 10px 0;
+}
+
+#add-section p {
+    font-size: 80%;
+    margin-top: -10px;
+}
+
+#add-section .add-btn {
+    margin: 5px 0 0 0;
+}
+
+/* ---------------------------------------- */
+/* MODIFY SECTION */
+/* ---------------------------------------- */
+
+#modify-section {
+    text-align: center;
+}
+
+#modify-section .modify-btn {
+    display: block;
+    margin: 20px auto 0 auto;
 }
 
 /* ---------------------------------------- */
@@ -127,4 +188,19 @@ header h2 {
 footer {
     text-align: center;
     font-size: 80%;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 50px 0;
+}
+
+footer a:link,
+a:visited {
+    text-decoration: none;
+    color: #e67e22;
+}
+
+footer a:hover,
+a:active {
+    text-decoration: underline;
+    color: #cf6d17;
 }
