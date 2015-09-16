@@ -28,6 +28,25 @@
                     <div class="col span_1_of_2">
                         <i class="fa fa-home fa-2x icon"></i>
                         <h2>Find Apartments</h2>
+                        <div class="select-box">
+                            <form action="" method="post">
+                                <select id="find-apartments" name="find-apartments">
+                                    <option value="all-apartments">All Apartments</option>
+                                    <option value="ambrose">Ambrose</option>
+                                    <option value="berkeley-court">Berkeley Court</option>
+                                    <option value="camino-del-sol">Camino del Sol</option>
+                                    <option value="columbia-court">Columbia Court</option>
+                                    <option value="cornell-court">Cornell Court</option>
+                                    <option value="dartmouth-court">Dartmouth Court</option>
+                                    <option value="dartmouth-court">Harvard Court</option>
+                                    <option value="puerta-del-sol">Puerta del Sol</option>
+                                    <option value="stanford-court">Stanford Court</option>
+                                    <option value="vista-del-campo">Vista del Campo</option>
+                                    <option value="vista-del-campo-norte">Vista del Campo Norte</option>
+                                </select>   
+                                <input type="submit" name="search-apartments" value="Search" class="btn btn-primary search-apartments">
+                            </form>                         
+                        </div>
                     </div>
                     <div class="col span_1_of_2">
                         <i class="fa fa-plus fa-2x icon"></i>

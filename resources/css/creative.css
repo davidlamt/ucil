@@ -28,6 +28,27 @@ body {
     margin: 0 auto;
 }
 
+.btn {
+    text-decoration: none;
+    font-weight: 300;
+    padding: 10px 30px;
+    border-radius: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e67e22;
+    color: #ffffff;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: #cf6d17;
+}
+
 /* ---------------------------------------- */
 /* HOME PAGE */
 /* ---------------------------------------- */
@@ -86,6 +107,17 @@ header h2 {
     color: #e67e22;
     width: 100%;
     text-align: center;
+}
+
+#main-section .select-box {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#main-section .search-apartments {
+    display: block;
+    margin: 20px auto;
 }
 
 /* ---------------------------------------- */
