@@ -1,3 +1,6 @@
+<?php include "database.php" ?>
+<?php include "functions.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +21,15 @@
 <body>
     <header id="header">
         <div class="container">
+            <span class="message">
+                <?php
+
+                if (isset($_POST['add-listing'])) {
+                    addListing();
+                }
+
+                ?>                
+            </span> 
             <h1>UCIL</h1> 
             <h2>Helping UCI Students Find Housing</h2> 
             <div class="section row">
@@ -72,39 +84,39 @@
                     <div class="col span-6-of-12">
                         <label for="add-apartments-select">Choose Your Apartment</label>
                         <select id="add-apartments-select" name="add-apartments-select">
-                            <option value="ambrose">Ambrose</option>
-                            <option value="berkeley-court">Berkeley Court</option>
-                            <option value="camino-del-sol">Camino del Sol</option>
-                            <option value="columbia-court">Columbia Court</option>
-                            <option value="cornell-court">Cornell Court</option>
-                            <option value="dartmouth-court">Dartmouth Court</option>
-                            <option value="dartmouth-court">Harvard Court</option>
-                            <option value="puerta-del-sol">Puerta del Sol</option>
-                            <option value="stanford-court">Stanford Court</option>
-                            <option value="vista-del-campo">Vista del Campo</option>
-                            <option value="vista-del-campo-norte">Vista del Campo Norte</option>
+                            <option value="Ambrose">Ambrose</option>
+                            <option value="Berkeley Court">Berkeley Court</option>
+                            <option value="Camino Del Sol">Camino del Sol</option>
+                            <option value="Columbia Court">Columbia Court</option>
+                            <option value="Cornell Court">Cornell Court</option>
+                            <option value="Dartmouth Court">Dartmouth Court</option>
+                            <option value="Harvard Court">Harvard Court</option>
+                            <option value="Puerta Del Sol">Puerta del Sol</option>
+                            <option value="Stanford Court">Stanford Court</option>
+                            <option value="Vista Del Campo">Vista del Campo</option>
+                            <option value="Vista Del Campo Norte">Vista del Campo Norte</option>
                         </select>      
                         <label for="price">Price</label>
                         <input type="text" id="price" name="price" placeholder="E.g. 485, 600, 790">
                         <label for="arrangement">Living Arrangement</label>
                         <select id="arrangement-select" name="arrangement-select">
-                            <option value="single">Single</option>
-                            <option value="double">Double</option>
-                            <option value="triple">Triple</option>
-                            <option value="quad">Quad</option>
-                            <option value="living-room">Living Room</option>
-                            <option value="other">Other</option>
+                            <option value="Single">Single</option>
+                            <option value="Double">Double</option>
+                            <option value="Triple">Triple</option>
+                            <option value="Quad">Quad</option>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Other">Other</option>
                         </select>                             
                     </div>
                     <div class="col span-6-of-12">
                         <label for="contact">Contact</label>
-                        <input type="text" id="contact" name="contact" placeholder="E.g. (123)456-7890">                                                       <label for="email-add">Email</label>
+                        <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890">                                                       <label for="email-add">Email</label>
                         <p>For modification and deletion of listings</p>
-                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com">                              
+                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com">                      
                     </div>
                 </div>
                 <input type="submit" id="add-listing" name="add-listing" class="btn btn-primary add-btn" value="Add">
-            </form>                
+            </form>             
         </div>
     </section>
     

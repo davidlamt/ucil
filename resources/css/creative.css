@@ -88,6 +88,11 @@ input[type="email"] {
     margin: 10px 0;
 }
 
+.message {
+    margin-top: 15px;
+    background-color: #e67e22;
+}
+
 /* ---------------------------------------- */
 /* HEADER */
 /* ---------------------------------------- */
