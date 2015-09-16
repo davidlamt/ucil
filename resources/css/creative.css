@@ -60,6 +60,21 @@ label {
     text-decoration: none;
 }
 
+.btn-danger,
+.btn-danger:link,
+.btn-danger:visited {
+    background-color: #ea6153;
+    color: #ffffff;
+    -webkit-transition: background-color 0.2s;
+    transition: background-color 0.2s;
+}
+
+.btn-danger:hover,
+.btn-danger:active {
+    background-color: #e64535;
+    text-decoration: none;
+}
+
 .main-text {
     text-align: center;
     font-weight: 300;
@@ -99,7 +114,7 @@ input[type="email"] {
     display: inline-block;
     font-size: 80%;
     padding: 5px 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #DDDDDD;
     margin-bottom: 10px;
 }
@@ -249,10 +264,10 @@ a:active {
 /* ------------------------------------------------------------ */
 
 /* ---------------------------------------- */
-/* SEARCH SECTION */
+/* SEARCH PAGE SECTION */
 /* ---------------------------------------- */
 
-/* ----- SEARCH TABLE ----- */
+/* ----- PAGE HEADING ----- */
 
 #search-page-section h1 {
     font-weight: 300;
@@ -269,6 +284,8 @@ a:active {
     width: 100px;
     margin: 40px auto 0 auto;     
 }
+
+/* ----- SEARCH TABLE ----- */
 
 #apartment-table tr:nth-child(even){
     background-color: #e67e22;
@@ -295,4 +312,41 @@ a:active {
 #apartment-table td {
     padding: 5px;
     text-align: left;
+}
+
+/* ------------------------------------------------------------ */
+/* MODIFY PAGE */
+/* ------------------------------------------------------------ */
+
+/* ---------------------------------------- */
+/* MODIFY LISTING SECTION */
+/* ---------------------------------------- */
+
+/* ----- PAGE HEADING ----- */
+
+#modify-listing-section h1 {
+    font-weight: 300;
+    font-size: 300%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#modify-listing-section h1:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 40px auto 0 auto;     
+}
+
+/* ----- FORM ----- */
+
+#modify-listing-section form {
+    text-align: center;
+}
+
+#modify-listing-section input[type="submit"] {
+    display: block;
+    margin: 20px auto;
 }

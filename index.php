@@ -112,7 +112,7 @@
                         <label for="contact">Contact</label>
                         <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890" required>                                                       <label for="email-add">Email</label>
                         <p>For modification and deletion of listings</p>
-                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com" required>                      
+                        <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com" required>            
                     </div>
                 </div>
                 <input type="submit" id="add-listing" name="add-listing" class="btn btn-primary add-btn" value="Add">
@@ -123,7 +123,7 @@
     <section id="modify-section">
         <div class="container">
             <h2 class="main-text">Modify Listing</h2>
-            <form action="" method="post">
+            <form action="modify_listing.php" method="post">
                 <label for="email-find">Please enter the email you used to post the listing</label>
                 <input type="email" id="email-find" name="email-find" placeholder="E.g. apartment@find.com" required>
                 <input type="submit" id="modify-listing" name="modify-listing" class="btn btn-primary modify-btn" value="Modify">
