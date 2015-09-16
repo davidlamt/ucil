@@ -11,12 +11,6 @@ function addListing() {
     $contact = mysqli_real_escape_string($connection, $_POST['contact']);
     $email = mysqli_real_escape_string($connection, $_POST['email-add']);
     
-//    echo $apartment."<br>";
-//    echo $price."<br>";
-//    echo $arrangement."<br>";
-//    echo $contact."<br>";
-//    echo $email."<br>";
-    
     // Validating fields
     if ($price == "" || $contact == "" || $email == "") {
         echo "Please fill in all the fields.";
@@ -78,6 +72,113 @@ function showApartments() {
             }                    
         }
     }    
+}
+
+function displayData() {
+    global $connection;
+    
+    // Gathering form value
+    $email = mysqli_real_escape_string($connection, $_SESSION['email-find']);
+
+    // Encrypting the email
+    $hashFormat = "$2y$10$";
+    $salt = "ThisWillProtectYourInfo";
+    $hashAndSalt = $hashFormat.$salt;
+    $encryptedEmail = crypt($email, $hashAndSalt);
+
+    // Creating and submitting query
+    $query = "SELECT * FROM listings WHERE email = '$encryptedEmail'";
+    $result = mysqli_query($connection, $query);
+    if (!$result) {
+        die();
+    } else {
+        $row = mysqli_fetch_assoc($result);   
+        echo "<tr>
+        <td>".$row['apartment']."</td>
+        <td>".$row['price']."</td>
+        <td>".$row['arrangement']."</td>
+        <td>".$row['contact']."</td>
+        </tr>";
+    }
+    
+}
+
+function assignSession() {
+    global $connection;
+    session_start();
+
+    // Assigning a session variable once the page loads
+    if (isset($_POST['modify-listing'])) {
+        $_SESSION['email-find'] = $_POST['email-find'];
+        
+        // Gathering form value
+        $email = mysqli_real_escape_string($connection, $_SESSION['email-find']);
+
+        // Encrypting the email
+        $hashFormat = "$2y$10$";
+        $salt = "ThisWillProtectYourInfo";
+        $hashAndSalt = $hashFormat.$salt;
+        $encryptedEmail = crypt($email, $hashAndSalt);
+
+        // Creating and submitting query
+        $query = "SELECT * FROM listings WHERE email = '$encryptedEmail'";       
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die();
+        } else {
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['id'] = $row['id'];
+        }        
+    }    
+}
+
+function deleteListing() {
+    global $connection;
+    
+    // Gathering form value
+    $email = mysqli_real_escape_string($connection, $_SESSION['email-find']);
+
+    // Encrypting the email
+    $hashFormat = "$2y$10$";
+    $salt = "ThisWillProtectYourInfo";
+    $hashAndSalt = $hashFormat.$salt;
+    $encryptedEmail = crypt($email, $hashAndSalt);
+
+    // Creating and submitting query
+    $query = "SELECT * FROM listings WHERE email = '$encryptedEmail'";
+    $result = mysqli_query($connection, $query);
+    if (!$result) {
+        die();
+    } else {
+        $row = mysqli_fetch_assoc($result);
+        if ($row == "" || $row == null) {
+            echo "<span class='message'>Sorry, we could not find a listing with that email.</span>";
+            echo "<a href='index.php' class='btn btn-primary home-out-btn'><i class='fa fa-home'></i></a>";
+            die();
+        }
+    }
+
+    if (isset($_POST['delete-listing'])) {
+        // Obtaining email from session variable
+        $email = $_SESSION['email-find'];
+
+        // Encrypting the email
+        $hashFormat = "$2y$10$";
+        $salt = "ThisWillProtectYourInfo";
+        $hashAndSalt = $hashFormat.$salt;
+        $encryptedEmail = crypt($email, $hashAndSalt);
+
+        // Creating and submitting the query
+        $query = "DELETE FROM listings where email = '$encryptedEmail'";
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die();
+        } else {
+            echo "Successfully removed the listing!";
+            echo "<a href='index.php' class='btn btn-primary home-out-btn-2'><i class='fa fa-home'></i></a>";
+            die();
+        }
+    }                    
 }
 
 ?>

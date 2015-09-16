@@ -1,6 +1,11 @@
 <?php include "database.php" ?>
 <?php include "functions.php" ?>
 
+<?php
+
+assignSession();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +30,55 @@
             <h1>Modify Listing</h1>
             <div class="breadcrumb">
                 <p><a href="index.php">Home</a> / Modify Listing</p>
-            </div>                  
+            </div>      
+            <span class="message">
+            <?php
+            
+            deleteListing();
+
+            if (isset($_POST['modify'])) {
+                // Gathering form values
+                $id = $_SESSION['id'];
+                $apartment = $_POST['add-apartments-select'];
+                $price =mysqli_real_escape_string($connection, $_POST['price']);
+                $arrangement = $_POST['arrangement-select'];
+                $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+                $email = mysqli_real_escape_string($connection, $_POST['email-add']);
+                
+                // Encrypting the email
+                $hashFormat = "$2y$10$";
+                $salt = "ThisWillProtectYourInfo";
+                $hashAndSalt = $hashFormat.$salt;
+                $encryptedEmail = crypt($email, $hashAndSalt);      
+            
+                // Creating the query and submitting it
+                $query = "UPDATE listings set apartment = '$apartment', price = '$price', arrangement = '$arrangement', contact = '$contact', email = '$encryptedEmail' WHERE id = $id";
+                $result = mysqli_query($connection, $query);
+                if (!$result) {
+                    die();
+                } else {
+                    echo "<span class='message'>Listing successfully updated!</span>";
+                    echo "<a href='index.php' class='btn btn-primary home-out-btn-3'><i class='fa fa-home'></i></a>";
+                    die();
+                }
+            }
+
+            ?>
+            </span>
+            <h2>Current Listing</h2>
+            <table id="apartment-table" style="width:100%">
+                <tr>
+                    <th>Apartment Complex</th>
+                    <th>Price</th>
+                    <th>Living Arrangement</th>
+                    <th>Contact</th>
+                </tr>                        
+            <?php 
+
+            displayData();
+
+            ?>
+            </table>            
             <form action="" method="post">
                 <div class="row section">
                     <div class="col span-6-of-12">
@@ -62,9 +115,10 @@
                         <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com" required>
                     </div>
                 </div>    
-                <input type="submit" id="modify-listing" name="modify-listing" class="btn btn-primary add-btn" value="Update"> 
-                <input type="submit" id="delete-listing" name="delete-listing" class="btn btn-danger" value="Delete">
-            </form>          
+                <input type="submit" id="modify" name="modify" class="btn btn-primary add-btn" value="Update"> 
+                <input type="submit" id="delete-listing" name="delete-listing" class="btn btn-danger" value="Delete" formnovalidate>
+            </form>    
+            <a href="index.php" class="btn btn-primary home-btn"><i class="fa fa-home"></i></a>      
         </div>        
     </section> 
     
