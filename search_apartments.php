@@ -22,6 +22,9 @@
     <section id="search-page-section">
         <div class="container">
             <h1>Find Your Apartment</h1>
+            <div class="breadcrumb">
+                <p><a href="index.php">Home</a> / Search Apartments</p>
+            </div>
             <table id="apartment-table" style="width:100%">
                 <tr>
                     <th>Apartment Complex</th>
@@ -35,6 +38,7 @@
 
             ?>    
             </table>    
+            <a href="index.php" class="btn btn-primary home-btn"><i class="fa fa-home"></i></a>
         </div>
     </section>
    
