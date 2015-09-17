@@ -10,6 +10,12 @@ Currently working on making the application live.
 ## Installation
 The most recent version of this project is available for download under the release tab.
 
+**UCIL** has the following MySQL database configuration
+     $connection = mysqli_connect("localhost", "root", "", "ucil");
+It uses a table called
+     listings
+The database connection and queries must be configured correctly for this application to operate properly.
+
 ## Vendors
 **UCIL** uses the following open source projects
 * <a href="https://jquery.com/" target="_blank">jQuery</a>
