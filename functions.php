@@ -181,4 +181,35 @@ function deleteListing() {
     }                    
 }
 
+function updateListing() {
+    global $connection;
+    
+    if (isset($_POST['modify'])) {
+        // Gathering form values
+        $id = $_SESSION['id'];
+        $apartment = $_POST['add-apartments-select'];
+        $price =mysqli_real_escape_string($connection, $_POST['price']);
+        $arrangement = $_POST['arrangement-select'];
+        $contact = mysqli_real_escape_string($connection, $_POST['contact']);
+        $email = mysqli_real_escape_string($connection, $_POST['email-add']);
+
+        // Encrypting the email
+        $hashFormat = "$2y$10$";
+        $salt = "ThisWillProtectYourInfo";
+        $hashAndSalt = $hashFormat.$salt;
+        $encryptedEmail = crypt($email, $hashAndSalt);      
+
+        // Creating the query and submitting it
+        $query = "UPDATE listings set apartment = '$apartment', price = '$price', arrangement = '$arrangement', contact = '$contact', email = '$encryptedEmail' WHERE id = $id";
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die();
+        } else {
+            echo "<span class='message'>Listing successfully updated!</span>";
+            echo "<a href='index.php' class='btn btn-primary home-out-btn-3'><i class='fa fa-home'></i></a>";
+            die();
+        }
+    }    
+}
+
 ?>
