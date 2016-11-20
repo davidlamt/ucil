@@ -14,4 +14,4 @@ A platform to help UCI students find off-campus housing.
 [MIT License](https://github.com/davidlamt/ucil/blob/master/LICENSE)
 
 ## Author
-[David Tran](http://davidtranscend.com/)
+[David Tran](http://davidtranscend.com/) 
