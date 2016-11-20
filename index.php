@@ -112,7 +112,8 @@
                     </div>
                     <div class="col span-6-of-12">
                         <label for="contact">Contact</label>
-                        <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890" required>                                                       <label for="email-add">Email</label>
+                        <input type="text" id="contact" name="contact" placeholder="E.g. (123) 456-7890" required>
+                        <label for="email-add">Email</label>
                         <p>For modification and deletion of listings</p>
                         <input type="email" id="email-add" name="email-add" placeholder="E.g. apartment@find.com" required>            
                     </div>
@@ -136,6 +137,8 @@
     <footer>
         <div class="container">
             <p>&copy; 2015 &mdash; A project by <a href="http://davidtranscend.com/" target="_blank">David Tran</a></p>
+            <br/>
+            <p>Disclaimer: This application is only for demonstration purposes and all data is fictitious.</p>
         </div>
     </footer>  
 </body>

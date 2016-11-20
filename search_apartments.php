@@ -45,6 +45,8 @@
     <footer>
         <div class="container">
             <p>&copy; 2015 &mdash; A project by <a href="http://davidtranscend.com/" target="_blank">David Tran</a></p>
+            <br/>
+            <p>Disclaimer: This application is only for demonstration purposes and all data is fictitious.</p>
         </div>
     </footer>      
 </body>
